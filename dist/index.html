@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Journal</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="holder headline">
+      Weather Journal App
+    </div>
+    <div class="holder zip">
+      <label for="zip">Enter Zipcode here</label>
+      <input type="text" id="zip" placeholder="enter zip code here">
+    </div>
+    <div class="holder feel">
+      <label for="feelings">How are you feeling today?</label>
+      <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="5" cols="50"></textarea>
+      <button id="generate" type="submit"> Generate </button>
+    </div>
+    <div class="holder entry">
+      <div class="title">Most Recent Entry</div>
+      <div id="entryHolder">
+        <h3>Today is the</h3>
+        <div id="date"></div>
+        <h3>The temperature (In Celsius) is</h3>
+        <div id="temp"></div>
+        <h3>Your feelings today</h3>
+        <div id="content"></div>
+      </div>
+    </div>
+  </div>
+  <script></script>
+
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
