@@ -38,18 +38,5 @@ app.listen(8080, function () {
 
 // Setting up the POST Route (Client sending data to Server)
 app.post("/sendText", function (req, res) {
-    // https://docs.aylien.com/textapi/sdks/#node-js-sdk
-    textapi.sentiment({
-        'url': req.body.url
-    }, function (error, textResults) {
-        if (error === null) {
-            console.log("Success: You got the Aylien results");
-            res.send(textResults);
-            console.log(textResults);
-        } else {
-            console.log("Error: Aylien request not successful");
-            console.log(error);
-            return;
-        }
-    });
+    
 });

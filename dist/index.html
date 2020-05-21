@@ -3,37 +3,52 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Weather Journal</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAPSTONE Travel App</title>
 </head>
 
 <body>
-  <div id="app">
-    <div class="holder headline">
-      Weather Journal App
-    </div>
-    <div class="holder zip">
-      <label for="zip">Enter Zipcode here</label>
-      <input type="text" id="zip" placeholder="enter zip code here">
-    </div>
-    <div class="holder feel">
-      <label for="feelings">How are you feeling today?</label>
-      <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="5" cols="50"></textarea>
-      <button id="generate" type="submit"> Generate </button>
-    </div>
-    <div class="holder entry">
-      <div class="title">Most Recent Entry</div>
-      <div id="entryHolder">
-        <h3>Today is the</h3>
-        <div id="date"></div>
-        <h3>The temperature (In Celsius) is</h3>
-        <div id="temp"></div>
-        <h3>Your feelings today</h3>
-        <div id="content"></div>
+
+  <header>
+    <div id="header-container">
+      <div class="heading">
+        <h1>CAPSTONE Travel App</h1>
+        <img src="" alt="" class="logo"></img>
       </div>
     </div>
-  </div>
-  <script></script>
+  </header>
+
+  <main>
+    <div id="main-container">
+      <form class="" onsubmit="return Client.handlesubmit(event)">
+        <div class="destination-box">
+          <p>Enter your destination here</p>
+          <input id="destination" type="text" name="destination" value="" placeholder="Your Destination">
+        </div>
+        <div class="date-box">
+          <p>Departure Date</p>
+          <input id="date" type="date" name="destination" value="" placeholder="mm/dd/yyyy">
+        </div>
+        <div class="submission-box">
+          <input id="submit" type="submit" name="submit" value="" onclick="return Client.handleSubmit(event)"
+            onsubmit="return Client.handleSubmit(event)">
+        </div>
+      </form>
+      <div class="pixabay"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div id="footer-container">
+      <div class="copyright">Copyright by Ye Fung Tchen</div>
+      <a href="#" class="github">Github</a>
+      <a href="#" class="linkedin">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+
+  </script>
 
 <script type="text/javascript" src="main.js"></script></body>
 

@@ -10,16 +10,14 @@
 <body>
 
   <header>
-    <div id="header-container">
       <div class="heading">
         <h1>CAPSTONE Travel App</h1>
         <img src="" alt="" class="logo"></img>
       </div>
-    </div>
   </header>
 
   <main>
-    <div id="main-container">
+    <div class="container">
       <form class="" onsubmit="return Client.handlesubmit(event)">
         <div class="destination-box">
           <p>Enter your destination here</p>
@@ -29,20 +27,24 @@
           <p>Departure Date</p>
           <input id="date" type="date" name="destination" value="" placeholder="mm/dd/yyyy">
         </div>
-        <div class="submission-box">
-          <input id="submit" type="submit" name="submit" value="" onclick="return Client.handleSubmit(event)"
+        <div class="button-box">
+          <input id="submit" type="submit" name="submit" value="Let's go!" onclick="return Client.handleSubmit(event)"
             onsubmit="return Client.handleSubmit(event)">
+          <button id="deleteTrip" type="button">Delete Trip</button>
         </div>
       </form>
-      <div class="pixabay"></div>
+      <div class="contentBox">
+        <div id="pixabay">BILD HIER</div>
+        <div id="infobox">INFORMATIONEN</div>
+      </div>
     </div>
   </main>
 
   <footer>
     <div id="footer-container">
       <div class="copyright">Copyright by Ye Fung Tchen</div>
-      <a href="#" class="github">Github</a>
-      <a href="#" class="linkedin">LinkedIn</a>
+      <a href="https://github.com/yefungtchen" class="github">Github</a>
+      <a href="https://www.linkedin.com/in/ye-fung-tchen/" class="linkedin">LinkedIn</a>
     </div>
   </footer>
 

@@ -1,5 +1,6 @@
 main {
-    margin: 0;
+    margin: 15px;
+    border: solid 2px black;
 }
 
 p {
@@ -10,16 +11,69 @@ input {
     text-align: center;
 }
 
-#main-container {
-    background-color: white;
-    margin: 0;
+.container {
+    padding: 10px 0 10px 0;
 }
 
 #destination {
-    width: 240px;
-    background:#22b2da;
+    margin: 15px 0 15px 0;
+    width: 200px;
     color: black;
-    font-size: 15px;
     align-items: center;
 }
+
+#submit {
+    margin: 15px 0 15px 0;
+    width: 120px;
+    height: 40px;
+    border-color: black;
+    border-style: dashed;
+}
+
+#submit:hover {
+    opacity: 0.8;
+}
+
+#deleteTrip {
+    margin: 15px 0 15px 0;
+    width: 120px;
+    height: 40px;
+    border-color: black;
+    border-style: dashed;
+}
+
+#deleteTrip:hover {
+    opacity: 0.8;
+}
+
+.contentBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pixabay {
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    background-color: green;
+    margin: 8px;
+    border: solid 1px black;
+}
+
+#infobox {
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    background-color: green;
+    margin: 8px;
+    border: solid 1px black;
+}
+
+@media screen and (max-width: 500px) {
+    .contentBox {
+        display: inline-block
+    }
+}
+
 
