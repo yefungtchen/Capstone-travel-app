@@ -1,5 +1,7 @@
 var dotenv = require('dotenv');
 dotenv.config();
+// API (GeoNames, Weatherbit, Pixabay)
+
 var path = require("path");
 
 // Requires Express to run server and routes
@@ -33,10 +35,16 @@ app.get("/", function (req, res) {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
-    console.log("Example app listening on port 8080!");
+    console.log("CAPSTONE Travel App listening on port 8080!");
 });
 
-// Setting up the POST Route (Client sending data to Server)
+// Adding the travel information
 app.post("/sendText", function (req, res) {
     
 });
+
+// GeoNames Route
+
+// Weatherbit Route
+
+// Pixabay Route
