@@ -18,21 +18,21 @@
 
   <main>
     <div class="container">
-      <form class="" onsubmit="return Client.handlesubmit(event)">
         <div class="destination-box">
-          <p>Enter your destination here</p>
-          <input id="destination" type="text" name="destination" value="" placeholder="Your Destination">
+          <p>Enter our destination here</p>
+          <input id="destination" type="text" name="destination" value="" placeholder="Your Destination" required>
         </div>
         <div class="date-box">
-          <p>Departure Date</p>
-          <input id="date" type="date" name="destination" value="" placeholder="mm/dd/yyyy">
+          <p>Start Date</p>
+          <input id="startDate" type="date" name="startDate" value="" placeholder="mm/dd/yyyy" required>
+          <p>End Date</p>
+          <input id="endDate" type="date" name="endDate" value="" placeholder="mm/dd/yyyy" required>
         </div>
         <div class="button-box">
-          <input id="submit" type="submit" name="submit" value="Let's go!" onclick="return Client.handleSubmit(event)"
-            onsubmit="return Client.handleSubmit(event)">
+          <button id="submit" type="submit" name="submit" onclick="return Client.postDestinationDate(event)">Let's go!</button>
           <button id="deleteTrip" type="button">Delete Trip</button>
         </div>
-      </form>
+      </div>
       <div class="contentBox">
         <div id="pixabay">BILD HIER</div>
         <div id="infobox">INFORMATIONEN</div>

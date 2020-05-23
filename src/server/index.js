@@ -31,18 +31,19 @@ app.listen(8080, function () {
 });
 
 // Setting up the GET route (Client takes data from Server)
-app.get("/", function (request, respond) {
-    res.sendFile("dist/index.html");
+app.get("/", function (request, response) {
+    response.sendFile("dist/index.html");
 });
 
+// GET Test Route
+app.get("/xatar", function(request,response){
+    response.send({ essen: "einen Köftespieß" })
+})
 
 // Sending destination information
-app.post("/sendDestination", function (request, respond) {
-    
+app.post("/sendDestinationAndDay", function (request, response) {
+    console.log(request.body)
+    allData = request.body;
+    console.log(allData);
+    response.send(allData);
 });
-
-// GeoNames Route
-
-// Weatherbit Route
-
-// Pixabay Route
