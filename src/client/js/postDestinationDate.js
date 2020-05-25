@@ -24,7 +24,7 @@ const postDestinationDate = async () => {
     const geoNamesUrl = geonames_baseURL + geoParams + destination + geoParam2 + username;
 
     await fetch(geoNamesUrl, {
-        method: "GET"
+        method: "POST"
     })
         // API response
         .then((response) => response.json())
@@ -47,11 +47,10 @@ const fetchWeatherbitApi = async (latitude, longitude) => {
 
     // Calculation of the duration of dates: endDate - startDate = days (length)
     let days = ((new Date(endDate).getTime() - new Date(startDate).getTime()) / 86400000);
-
     // Weatherbit API call
     await fetch(weatherbit_baseURL + "?lat=" + latitude + "&lon=" + longitude + "&start_date="
         + startDate + "&end_date" + endDate + "&key=" + weatherbit_APIKey + "&tp=daily", {
-        method: "GET"
+        method: "POST"
     })
         // API response
         .then((response) => response.json())
@@ -62,7 +61,6 @@ const fetchWeatherbitApi = async (latitude, longitude) => {
             }
             console.log(data);
             let temperatureString = "";
-
             // Provides a list on the right green box in frontend for informations
             data.forEach(element => {
                 temperatureString += "Date: " + element.datetime + "<br>";
@@ -80,7 +78,7 @@ const fetchPixabayApi = async (destination) => {
     const pixabayUrl = pixabay_baseURL + "?key=" + pixabay_APIKey + "&q=" + destination + "&image_type=photo" + "&min_width=250px&min_height=250px";
 
     await fetch(pixabayUrl, {
-        method: "GET"
+        method: "POST"
     })
         // API response
         .then((response) => response.json())

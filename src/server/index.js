@@ -1,6 +1,3 @@
-const dotenv = require('dotenv');
-dotenv.config();
-
 var path = require("path");
 
 // Requires Express to run server and routes
@@ -30,20 +27,50 @@ app.listen(8080, function () {
     console.log("CAPSTONE Travel App listening on port 8080!");
 });
 
+const projectData = {};
+const geonamesData = {};
+const weatherbitData = {};
+const pixabayData = {};
+
 // Setting up the GET route (Client takes data from Server)
 app.get("/", function (request, response) {
     response.sendFile("dist/index.html");
 });
 
-// GET Test Route
 app.get("/xatar", function (request, response) {
-    response.send({ essen: "Haval, gib mir einfach einen Köftespieß" })
-})
-
-// Sending destination information
-app.post("/sendDestinationAndDay", function (request, response) {
-    console.log(request.body)
-    allData = request.body;
-    console.log(allData);
-    response.send(allData);
+    response.send({ Essen: "Köfte" });
 });
+
+// Sending destination information (projectData)
+// app.post("/sendDestinationAndDay", function (request, response) {
+//     console.log(request.body)
+//     allData = request.body;
+//     console.log(allData);
+//     response.send(allData);
+// });
+
+// GeoNames Data
+app.post("/geonamesData", function (request, response) {
+    geonamesData = request.body;
+    geonamesData.longitude = request.postalCodes[0].lng;
+    geonamesData.latitude = request.postalCodes[0].lat;
+    console.log(geonamesData);
+    response.send(geonamesData);
+});
+
+// Weatherbit Data
+app.post("/weatherbitData", function (request, response) {
+    weatherbitData = request.body;
+    weatherData.max_temp = request.body.max_temp;
+    weatherData.min_temp = request.min_temp;
+    console.log(weatherData);
+    response.send(weatherData);
+});
+// Pixabay Data
+app.post("/pixabayData", function (request, response) {
+    pixabayData = request.body;
+    pixabayData.picture = request.hits[0].webformatURL;
+    console.log(pixabayData);
+    response.send(pixabayData);
+});
+
