@@ -1,11 +1,23 @@
-# Weather-Journal App Project
+# FEND CAPSTONE Travel App 
 
 ## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI.
+In this project we used all the previous knowledge which we gained from the Udacity course.
 
-## Project
-1) Set up the project environment and installed Node and all needed packages which need to be included in the server.js file.
-2) Then added POST and GET routes to make sure that the data is received from the server.
-3) Made API credentials on OpenWeatherMap
-4) In the next step I created async functions to fetch all the weather data from OWM and store it into my local server.
-5) Set up a click-event to update the UI dynamically.
+You can add a destination and a start and end-date to receive the weather information for the date-range you choosed.
+You will also get a picture of the destination. 
+
+## What this project includes
+Working with webpack
+- Entry points, dist folder, loaders, plugins, mode, other tools
+- Sass, Jest, Weatherbit API, Pixabay API, GeoNames API
+- fetch() api, working with the DOM and Node.js 
+
+## How to run
+Open your terminal and
+
+npm install to install all needed node packages
+
+npm run build-dev for development environment
+npm run build-prod fore production environment
+npm start to run the server on http://localhost:8080/
