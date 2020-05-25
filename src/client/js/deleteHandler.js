@@ -1,4 +1,4 @@
-// Delete Handler. Function is deleting entries
+// Function deletes all the entries and empties the boxes
 
 document.getElementById("deleteTrip").addEventListener("click", deleteHandler);
 

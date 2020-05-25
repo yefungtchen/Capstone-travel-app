@@ -36,8 +36,8 @@ app.get("/", function (request, response) {
 });
 
 // GET Test Route
-app.get("/xatar", function(request,response){
-    response.send({ essen: "einen Köftespieß" })
+app.get("/xatar", function (request, response) {
+    response.send({ essen: "Haval, gib mir einfach einen Köftespieß" })
 })
 
 // Sending destination information
