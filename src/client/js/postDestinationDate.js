@@ -17,7 +17,7 @@ let longitude = 0;
 let latitude = 0;
 
 
-// POST-Route client to server: sending destination 
+// POST-Route client to server: sending destination
 const postDestinationDate = async () => {
     // Store destination and date which was entered by the user
     const destination = document.getElementById("destination").value;
@@ -28,15 +28,15 @@ const postDestinationDate = async () => {
     await fetch(geoNamesUrl, {
         method: "GET"
     })
-    .then((response) => response.json())
-    .then((sendedData) => {
-        longitude = sendedData.postalCodes[0].lng;
-        latitude = sendedData.postalCodes[0].lat;
-        fetchWeatherbitApi(latitude, longitude);
-        fetchPixabayApi(destination);
-    }).catch((error) => {
-        console.log("Sending Destination and Date failed", error )
-    });
+        .then((response) => response.json())
+        .then((sendedData) => {
+            longitude = sendedData.postalCodes[0].lng;
+            latitude = sendedData.postalCodes[0].lat;
+            fetchWeatherbitApi(latitude, longitude);
+            fetchPixabayApi(destination);
+        }).catch((error) => {
+            console.log("Sending Destination and Date failed", error)
+        });
 }
 
 // Getting the date for latitude and longitude from the GeoNames API
@@ -47,47 +47,44 @@ const fetchWeatherbitApi = async (latitude, longitude) => {
 
     let days = ((new Date(endDate).getTime() - new Date(startDate).getTime()) / 86400000);
 
-    await fetch(weatherbit_baseURL + "?lat=" + latitude + "&lon=" + longitude + "&start_date=" 
-    + startDate + "&end_date" + endDate + "&key=" + weatherbit_APIKey + "&tp=daily", {
+    await fetch(weatherbit_baseURL + "?lat=" + latitude + "&lon=" + longitude + "&start_date="
+        + startDate + "&end_date" + endDate + "&key=" + weatherbit_APIKey + "&tp=daily", {
         method: "GET"
     })
-    .then((response) => response.json())
-    .then((sendedData) => {
-        let data = []
-        for(let i = 0; i <= days; i++) {
-            data.push(sendedData.data[i+1])
-        }
-        console.log(data);
-        let temperatureString = "";
-        
-        data.forEach(element => {
-            temperatureString += "Date: " + element.datetime + "<br>";
-            temperatureString += "Max Temperature: " + element.max_temp + "°C<br>";
-            temperatureString += "Min Temperature: " + element.min_temp + "°C<br><br>";
+        .then((response) => response.json())
+        .then((sendedData) => {
+            let data = []
+            for (let i = 0; i <= days; i++) {
+                data.push(sendedData.data[i + 1])
+            }
+            console.log(data);
+            let temperatureString = "";
+
+            data.forEach(element => {
+                temperatureString += "Date: " + element.datetime + "<br>";
+                temperatureString += "Max Temperature: " + element.max_temp + "°C<br>";
+                temperatureString += "Min Temperature: " + element.min_temp + "°C<br><br>";
+            });
+            document.getElementById("infobox").innerHTML = temperatureString;
+        }).catch((error) => {
+            console.log("Sending weather failed", error)
         });
-        document.getElementById("infobox").innerHTML = temperatureString;
-    }).catch((error) => {
-        console.log("Sending weather failed", error )
-    });
 }
-
-// https://pixabay.com/api/?key=16700254-b30dd28cbf729394156c7695e&q=yellow+flowers&image_type=photo
-
 
 const fetchPixabayApi = async (destination) => {
     const pixabayUrl = pixabay_baseURL + "?key=" + pixabay_APIKey + "&q=" + destination + "&image_type=photo" + "&min_width=250px&min_height=250px";
-    
+
     await fetch(pixabayUrl, {
         method: "GET"
     })
-    .then((response) => response.json())
-    .then((sendedData) => {
-        console.log(sendedData);
-        let pixaUrl = sendedData.hits[0].webformatURL;
-        document.getElementById("pixabay").innerHTML = `<img src="` + pixaUrl + `" alt="Girl in a jacket" width="250" height="250"></img>`
-    }).catch((error) => {
-        console.log("Sending picture failed", error )
-    });
+        .then((response) => response.json())
+        .then((sendedData) => {
+            console.log(sendedData);
+            let pixaUrl = sendedData.hits[0].webformatURL;
+            document.getElementById("pixabay").innerHTML = `<img src="` + pixaUrl + `" alt="Girl in a jacket" width="250" height="250"></img>`
+        }).catch((error) => {
+            console.log("Sending picture failed", error)
+        });
 }
 
 export { postDestinationDate }
